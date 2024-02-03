@@ -27,7 +27,7 @@ RUN groupadd -g 999 appuser && \
 
 USER appuser
 
-COPY --from=builder /app/target/release/axum-graphql /app
+COPY --from=builder /app/target/release/kp-graphql-tpl /app
 
 WORKDIR /app
 
@@ -35,4 +35,4 @@ ENV JAEGER_ENABLED=true
 
 EXPOSE 8000
 
-ENTRYPOINT ["./axum-graphql"]
+ENTRYPOINT ["./kp-graphql-tpl"]
